@@ -18,7 +18,16 @@
         </activity>
         <activity
             android:name=".MyProfile"
-            android:label="@string/title_activity_my_profile"></activity>
+            android:label="@string/title_activity_my_profile" />
+        <activity
+            android:name=".PuppyProfile"
+            android:label="@string/title_activity_puppy_profile" />
+        <activity
+            android:name=".BrowseDoggies"
+            android:label="@string/title_activity_browse_doggies" />
+        <activity
+            android:name=".BarkBoard"
+            android:label="@string/title_activity_bark_board"></activity>
     </application>
 
 </manifest>

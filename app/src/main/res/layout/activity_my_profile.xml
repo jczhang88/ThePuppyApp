@@ -20,7 +20,6 @@
         android:id="@+id/ProfilePicture"
         android:layout_width="161dp"
         android:layout_height="146dp"
-        android:src="@mipmap/ic_launcher"
         tools:layout_editor_absoluteX="112dp"
         tools:layout_editor_absoluteY="16dp" />
 
