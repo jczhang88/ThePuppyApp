@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ThePuppyApp</string>
+    <string name="title_activity_my_profile">MyProfile</string>
 </resources>

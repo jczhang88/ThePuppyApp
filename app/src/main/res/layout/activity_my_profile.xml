@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyProfile">
+
+    <TextView
+        android:id="@+id/Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        tools:layout_editor_absoluteX="146dp"
+        tools:layout_editor_absoluteY="179dp"
+        tools:text="First Last" />
+
+    <ImageView
+        android:id="@+id/ProfilePicture"
+        android:layout_width="161dp"
+        android:layout_height="146dp"
+        android:src="@mipmap/ic_launcher"
+        tools:layout_editor_absoluteX="112dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/Bio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Short Bio here"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="238dp" />
+
+    <TextView
+        android:id="@+id/MyPuppies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Puppies:"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="290dp" />
+
+    <ImageView
+        android:id="@+id/Puppy3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"
+        tools:layout_editor_absoluteX="239dp"
+        tools:layout_editor_absoluteY="361dp" />
+
+    <ImageView
+        android:id="@+id/Puppy2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"
+        tools:layout_editor_absoluteX="146dp"
+        tools:layout_editor_absoluteY="361dp" />
+
+    <ImageView
+        android:id="@+id/Puppy1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="361dp" />
+</android.support.constraint.ConstraintLayout>
