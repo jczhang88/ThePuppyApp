@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">ThePuppyApp</string>
     <string name="title_activity_my_profile">MyProfile</string>
+    <string name="title_activity_puppy_profile">PuppyProfile</string>
+    <string name="title_activity_browse_doggies">BrowseDoggies</string>
+    <string name="title_activity_bark_board">BarkBoard</string>
 </resources>
