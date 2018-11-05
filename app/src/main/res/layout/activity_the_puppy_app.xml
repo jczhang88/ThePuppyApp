@@ -33,10 +33,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="114dp"
-        android:text="The Puppy App"
-        android:textSize="30sp" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="111dp"
+        android:layout_marginEnd="48dp"
+        android:text="Welcome to The Puppy App"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/buttonLogin"
