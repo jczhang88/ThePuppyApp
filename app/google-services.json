@@ -1,20 +1,32 @@
 {
   "project_info": {
+<<<<<<< HEAD
     "project_number": "754461920403",
     "firebase_url": "https://thepuppyapp-5b4b1.firebaseio.com",
     "project_id": "thepuppyapp-5b4b1",
     "storage_bucket": "thepuppyapp-5b4b1.appspot.com"
+=======
+    "project_number": "732103474699",
+    "firebase_url": "https://thepuppyapp-69b6d.firebaseio.com",
+    "project_id": "thepuppyapp-69b6d",
+    "storage_bucket": "thepuppyapp-69b6d.appspot.com"
+>>>>>>> origin/master
   },
   "client": [
     {
       "client_info": {
+<<<<<<< HEAD
         "mobilesdk_app_id": "1:754461920403:android:21cd4168713cd4b8",
+=======
+        "mobilesdk_app_id": "1:732103474699:android:21cd4168713cd4b8",
+>>>>>>> origin/master
         "android_client_info": {
           "package_name": "com.example.jeffrey_zhang.thepuppyapp"
         }
       },
       "oauth_client": [
         {
+<<<<<<< HEAD
           "client_id": "754461920403-uslv1ikq6og71t1nf8ql8aoeo0m02d5t.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -24,12 +36,27 @@
         },
         {
           "client_id": "754461920403-6acobuqodg8bsmh7flsakm9qqa9n39je.apps.googleusercontent.com",
+=======
+          "client_id": "732103474699-cd6g1r7aiodk52s1g8sg9vfmr5n97cba.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.jeffrey_zhang.thepuppyapp",
+            "certificate_hash": "a0d8e5b7c0dc2e6c5ec664bbce551a8571bb374f"
+          }
+        },
+        {
+          "client_id": "732103474699-elv21ce60366snq6sebjj5bb7joqr6bm.apps.googleusercontent.com",
+>>>>>>> origin/master
           "client_type": 3
         }
       ],
       "api_key": [
         {
+<<<<<<< HEAD
           "current_key": "AIzaSyCWICJQeEBx9-agJP62NAHlNf76VPnWAdM"
+=======
+          "current_key": "AIzaSyAZaan-RGNjbthd6OFVugyHGpUL9IQ0VSE"
+>>>>>>> origin/master
         }
       ],
       "services": {
@@ -40,7 +67,11 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
+<<<<<<< HEAD
               "client_id": "754461920403-6acobuqodg8bsmh7flsakm9qqa9n39je.apps.googleusercontent.com",
+=======
+              "client_id": "732103474699-elv21ce60366snq6sebjj5bb7joqr6bm.apps.googleusercontent.com",
+>>>>>>> origin/master
               "client_type": 3
             }
           ]
