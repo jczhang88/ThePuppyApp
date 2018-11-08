@@ -13,15 +13,15 @@
         android:text="TextView"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
         tools:layout_editor_absoluteX="53dp"
-        tools:layout_editor_absoluteY="231dp"
+        tools:layout_editor_absoluteY="314dp"
         tools:text="Puppy Name" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="168dp"
-        android:layout_height="159dp"
+        android:layout_width="321dp"
+        android:layout_height="246dp"
         android:src="@drawable/puppy"
-        tools:layout_editor_absoluteX="108dp"
+        tools:layout_editor_absoluteX="32dp"
         tools:layout_editor_absoluteY="49dp" />
 
     <TextView
@@ -30,7 +30,7 @@
         android:layout_height="16dp"
         android:text="TextView"
         tools:layout_editor_absoluteX="53dp"
-        tools:layout_editor_absoluteY="273dp"
+        tools:layout_editor_absoluteY="360dp"
         tools:text="Golden Retriever" />
 
     <TextView
@@ -39,6 +39,6 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         tools:layout_editor_absoluteX="53dp"
-        tools:layout_editor_absoluteY="308dp"
+        tools:layout_editor_absoluteY="389dp"
         tools:text="Example Bio Here" />
 </android.support.constraint.ConstraintLayout>

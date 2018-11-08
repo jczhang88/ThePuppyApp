@@ -18,10 +18,10 @@
 
     <ImageView
         android:id="@+id/ProfilePicture"
-        android:layout_width="161dp"
+        android:layout_width="150dp"
         android:layout_height="146dp"
-        android:src="@drawable/stockicon"
-        tools:layout_editor_absoluteX="112dp"
+        android:src="@drawable/woman"
+        tools:layout_editor_absoluteX="117dp"
         tools:layout_editor_absoluteY="16dp" />
 
     <TextView
@@ -43,25 +43,25 @@
 
     <ImageView
         android:id="@+id/Puppy3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher"
-        tools:layout_editor_absoluteX="239dp"
-        tools:layout_editor_absoluteY="361dp" />
+        android:layout_width="92dp"
+        android:layout_height="66dp"
+        android:src="@drawable/puppy"
+        tools:layout_editor_absoluteX="224dp"
+        tools:layout_editor_absoluteY="368dp" />
 
     <ImageView
         android:id="@+id/Puppy2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher"
-        tools:layout_editor_absoluteX="146dp"
+        android:layout_width="53dp"
+        android:layout_height="84dp"
+        android:src="@drawable/pupper"
+        tools:layout_editor_absoluteX="157dp"
         tools:layout_editor_absoluteY="361dp" />
 
     <ImageView
         android:id="@+id/Puppy1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher"
+        android:layout_width="85dp"
+        android:layout_height="80dp"
+        android:src="@drawable/pup"
         tools:layout_editor_absoluteX="53dp"
         tools:layout_editor_absoluteY="361dp" />
 </android.support.constraint.ConstraintLayout>
