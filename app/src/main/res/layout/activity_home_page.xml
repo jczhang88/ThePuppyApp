@@ -99,7 +99,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="12dp"
-        android:src="@drawable/Map" />
+        android:src="@drawable/map" />
 
     <TextView
         android:id="@+id/textViewMap"
