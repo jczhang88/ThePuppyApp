@@ -29,8 +29,8 @@ public class HomePage extends Activity implements View.OnClickListener{
     @Override
     public void onClick(View view) {
         if (view == imageButtonPlaydates) {
-            //Intent PlaydatesIntent = new Intent(HomePage.this, Playdates.class);
-            //startActivity(PlaydatesIntent);
+            Intent PlaydatesIntent = new Intent(HomePage.this, PuppyPlaydates.class);
+            startActivity(PlaydatesIntent);
         }
         else if (view == imageButtonBarkBoard) {
             Intent BarkBoardIntent = new Intent(HomePage.this, BarkBoard.class);
@@ -40,8 +40,8 @@ public class HomePage extends Activity implements View.OnClickListener{
             Intent FetchIntent = new Intent(HomePage.this, BrowseDoggies.class);
             startActivity(FetchIntent);
         } else {
-            // Intent MapIntent = new Intent(HomePage.this, Map.class);
-            // startActivity(MapIntent);
+            Intent MapIntent = new Intent(HomePage.this, Map.class);
+            startActivity(MapIntent);
         }
     }
 }
