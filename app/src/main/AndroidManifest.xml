@@ -27,7 +27,10 @@
             android:label="@string/title_activity_browse_doggies" />
         <activity
             android:name=".BarkBoard"
-            android:label="@string/title_activity_bark_board"></activity>
+            android:label="@string/title_activity_bark_board" />
+        <activity android:name=".PuppyPlaydates" />
+        <activity android:name=".Map" />
+        <activity android:name=".MyEvents" />
     </application>
 
 </manifest>
