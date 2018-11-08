@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "732103474699",
+    "firebase_url": "https://thepuppyapp-69b6d.firebaseio.com",
+    "project_id": "thepuppyapp-69b6d",
+    "storage_bucket": "thepuppyapp-69b6d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:732103474699:android:21cd4168713cd4b8",
+        "android_client_info": {
+          "package_name": "com.example.jeffrey_zhang.thepuppyapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "732103474699-cd6g1r7aiodk52s1g8sg9vfmr5n97cba.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.jeffrey_zhang.thepuppyapp",
+            "certificate_hash": "a0d8e5b7c0dc2e6c5ec664bbce551a8571bb374f"
+          }
+        },
+        {
+          "client_id": "732103474699-elv21ce60366snq6sebjj5bb7joqr6bm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZaan-RGNjbthd6OFVugyHGpUL9IQ0VSE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "732103474699-elv21ce60366snq6sebjj5bb7joqr6bm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
