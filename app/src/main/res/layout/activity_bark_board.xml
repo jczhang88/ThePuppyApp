@@ -6,4 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".BarkBoard">
 
+    <TextView
+        android:id="@+id/Post1"
+        android:layout_width="265dp"
+        android:layout_height="wrap_content"
+        android:text="Weekly Dog Walker Post: Match Busy People with Dog Walkers!"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="40dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Just got a new dog, I love him!"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="106dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Say hello to Sparky!"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="158dp" />
 </android.support.constraint.ConstraintLayout>
