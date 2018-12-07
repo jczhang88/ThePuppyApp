@@ -76,7 +76,8 @@ public class ThePuppyApp extends Activity implements View.OnClickListener {
 
         // Button to register account
         else if (view == buttonRegister) {
-            createAccount(email, password);
+            Intent registerIntent = new Intent(ThePuppyApp.this, Register.class);
+            startActivity(registerIntent);
         }
     }
 

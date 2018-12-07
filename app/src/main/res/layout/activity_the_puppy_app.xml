@@ -10,7 +10,7 @@
         android:id="@+id/editTextEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/editTextPassword"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="195dp"
         android:ems="10"
@@ -33,10 +33,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="111dp"
-        android:layout_marginEnd="48dp"
-        android:text="Welcome to The Puppy App"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="115dp"
+        android:text="The Puppy App"
         android:textSize="24sp" />
 
     <Button
@@ -45,18 +44,15 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="137dp"
+        android:layout_marginBottom="159dp"
         android:text="Login" />
 
     <Button
         android:id="@+id/buttonRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="23dp"
-        android:layout_marginRight="23dp"
-        android:layout_marginBottom="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="89dp"
         android:text="Register" />
 </RelativeLayout>
