@@ -7,7 +7,7 @@ import android.widget.Button;
 
 public class PuppyPlaydates extends Activity implements View.OnClickListener {
 
-    private Button buttonMyEvents, buttonCreateEvent;
+    private Button buttonMyEvents, buttonCreateEvents;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,17 +15,17 @@ public class PuppyPlaydates extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_puppy_playdates);
 
         buttonMyEvents = findViewById(R.id.buttonMyEvents);
-        buttonCreateEvent = findViewById(R.id.buttonCreateEvent);
+        buttonCreateEvents = findViewById(R.id.buttonCreateEvents);
 
         buttonMyEvents.setOnClickListener(this);
-        buttonCreateEvent.setOnClickListener(this);
+        buttonCreateEvents.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         if (view == buttonMyEvents) {
 
-        } else if (view == buttonCreateEvent) {
+        } else if (view == buttonCreateEvents) {
 
         }
     }

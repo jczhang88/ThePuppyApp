@@ -36,7 +36,8 @@
         <activity android:name=".PuppyPlaydates" />
         <activity android:name=".Map" />
         <activity android:name=".MyEvents" />
-        <activity android:name=".Register"></activity>
+        <activity android:name=".Register" />
+        <activity android:name=".CreateEvents"></activity>
     </application>
 
 </manifest>

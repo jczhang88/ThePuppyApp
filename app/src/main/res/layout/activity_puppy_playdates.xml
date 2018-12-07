@@ -37,7 +37,7 @@
         android:text="My Events" />
 
     <Button
-        android:id="@+id/buttonCreateEvent"
+        android:id="@+id/buttonCreateEvents"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/buttonMyEvents"
