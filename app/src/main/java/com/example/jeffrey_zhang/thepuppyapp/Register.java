@@ -2,7 +2,6 @@ package com.example.jeffrey_zhang.thepuppyapp;
 
 import android.app.Activity;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
