@@ -69,6 +69,9 @@ public class ThePuppyApp extends Activity implements View.OnClickListener {
             String email = editTextEmail.getText().toString();
 
             signIn(email, password);
+        } else if (view == buttonRegister) {
+            Intent register = new Intent(ThePuppyApp.this, Register.class);
+            startActivity(register);
         }
     }
 
@@ -94,19 +97,6 @@ public class ThePuppyApp extends Activity implements View.OnClickListener {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
-
-                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                            if (user != null) {
-                                // Name, email address, and profile photo URL
-                                String name = user.getDisplayName();
-                                String email = user.getEmail();
-                                Uri photoUrl = user.getPhotoUrl();
-
-                                // The user's ID, unique to the Firebase project. Do NOT use this value to
-                                // authenticate with your backup server, if you have one. User
-                                // FirebaseUser.getToken() instead.
-                                String uid = user.getUid();
-                            }
                             Intent loginIntent = new Intent(ThePuppyApp.this, HomePage.class);
                             startActivity(loginIntent);
                             Toast.makeText(ThePuppyApp.this, "Logged in!",
