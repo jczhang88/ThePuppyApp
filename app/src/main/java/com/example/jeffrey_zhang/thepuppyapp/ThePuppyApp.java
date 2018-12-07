@@ -63,21 +63,12 @@ public class ThePuppyApp extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-
-        String password, email;
-
-        password = editTextPassword.getText().toString();
-        email = editTextEmail.getText().toString();
-
         // Button to log in
         if (view == buttonLogin) {
-            signIn(email, password);
-        }
+            String password = editTextPassword.getText().toString();
+            String email = editTextEmail.getText().toString();
 
-        // Button to register account
-        else if (view == buttonRegister) {
-            Intent registerIntent = new Intent(ThePuppyApp.this, Register.class);
-            startActivity(registerIntent);
+            signIn(email, password);
         }
     }
 
@@ -93,26 +84,6 @@ public class ThePuppyApp extends Activity implements View.OnClickListener {
         if (mAuthListener != null) {
             mAuth.removeAuthStateListener(mAuthListener);
         }
-    }
-
-    public void createAccount (String email, String password) {
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "createUserWithEmail:success");
-                            Toast.makeText(ThePuppyApp.this, "Authentication " +
-                                    "successful", Toast.LENGTH_SHORT).show();
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(ThePuppyApp.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
     }
 
     public void signIn (String email, String password) {
@@ -136,13 +107,14 @@ public class ThePuppyApp extends Activity implements View.OnClickListener {
                                 // FirebaseUser.getToken() instead.
                                 String uid = user.getUid();
                             }
-                            startActivity(new Intent(ThePuppyApp.this, HomePage.class));
-                            Toast.makeText(ThePuppyApp.this, "Logged in",
+                            Intent loginIntent = new Intent(ThePuppyApp.this, HomePage.class);
+                            startActivity(loginIntent);
+                            Toast.makeText(ThePuppyApp.this, "Logged in!",
                                     Toast.LENGTH_SHORT).show();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(ThePuppyApp.this, "Authentication failed.",
+                            Toast.makeText(ThePuppyApp.this, "Login failed.",
                                     Toast.LENGTH_SHORT).show();
                         }
                     }

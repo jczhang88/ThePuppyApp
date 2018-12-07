@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -18,6 +20,8 @@ import static android.content.ContentValues.TAG;
 
 public class Register extends Activity implements View.OnClickListener {
 
+    private Button buttonRegisterUser;
+    private EditText editTextRegisterEmail, editTextRegisterPassword;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
@@ -25,6 +29,12 @@ public class Register extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        buttonRegisterUser = findViewById(R.id.buttonRegisterUser);
+        editTextRegisterEmail = findViewById(R.id.editTextRegisterEmail);
+        editTextRegisterPassword = findViewById(R.id.editTextRegisterPassword);
+
+        buttonRegisterUser.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -45,7 +55,12 @@ public class Register extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+        if (view == buttonRegisterUser) {
+            String email = editTextRegisterEmail.getText().toString();
+            String password = editTextRegisterPassword.getText().toString();
 
+            createAccount(email, password);
+        }
     }
 
     @Override
@@ -70,12 +85,12 @@ public class Register extends Activity implements View.OnClickListener {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
-                            Toast.makeText(Register.this, "Authentication " +
-                                    "successful", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Register.this, "You created your " +
+                                    "account!", Toast.LENGTH_SHORT).show();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(Register.this, "Authentication failed.",
+                            Toast.makeText(Register.this, "Failed to create your account.",
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
