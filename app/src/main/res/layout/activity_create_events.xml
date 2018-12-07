@@ -1,9 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CreateEvents">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/textViewCreateEvents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="115dp"
+        android:text="Create Your Event"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/editTextEventName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="177dp"
+        android:ems="10"
+        android:hint="Enter Event Name"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editTextEventLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextEventName"
+        android:layout_alignStart="@+id/editTextEventName"
+        android:layout_marginTop="0dp"
+        android:ems="10"
+        android:hint="Enter Location"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editTextEventDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextEventLocation"
+        android:layout_alignStart="@+id/editTextEventName"
+        android:ems="10"
+        android:hint="Enter Date"
+        android:inputType="textPersonName" />
+</RelativeLayout>
