@@ -2,12 +2,31 @@ package com.example.jeffrey_zhang.thepuppyapp;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
-public class PuppyPlaydates extends Activity {
+public class PuppyPlaydates extends Activity implements View.OnClickListener {
+
+    private Button buttonMyEvents, buttonCreateEvent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_puppy_playdates);
+
+        buttonMyEvents = findViewById(R.id.buttonMyEvents);
+        buttonCreateEvent = findViewById(R.id.buttonCreateEvent);
+
+        buttonMyEvents.setOnClickListener(this);
+        buttonCreateEvent.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view == buttonMyEvents) {
+
+        } else if (view == buttonCreateEvent) {
+
+        }
     }
 }

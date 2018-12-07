@@ -35,4 +35,15 @@
         android:layout_marginLeft="25dp"
         android:layout_marginBottom="25dp"
         android:text="My Events" />
+
+    <Button
+        android:id="@+id/buttonCreateEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/buttonMyEvents"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:text="Create Your Event" />
 </RelativeLayout>
