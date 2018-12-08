@@ -6,7 +6,14 @@ public class Events {
     String eventDate;
     String eventDescription;
 
-    public Events () {
+    Events () {
 
+    }
+
+    public Events(String eventName, String eventLocation, String eventDate, String eventDescription) {
+        this.eventName = eventName;
+        this.eventLocation = eventLocation;
+        this.eventDate = eventDate;
+        this.eventDescription = eventDescription;
     }
 }
