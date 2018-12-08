@@ -20,13 +20,12 @@
         tools:text="" />
 
     <ImageView
-        android:id="@+id/ProfilePicture"
+        android:id="@+id/imageViewProfilePicture"
         android:layout_width="150dp"
         android:layout_height="146dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="87dp"
-        android:src="@drawable/woman"
         tools:layout_editor_absoluteX="117dp"
         tools:layout_editor_absoluteY="16dp" />
 
