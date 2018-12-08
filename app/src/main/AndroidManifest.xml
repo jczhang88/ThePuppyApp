@@ -38,7 +38,8 @@
         <activity android:name=".MyEvents" />
         <activity android:name=".Register" />
         <activity android:name=".HomePage" />
-        <activity android:name=".CreateEvents"></activity>
+        <activity android:name=".CreateEvents" />
+        <activity android:name=".EditProfile"></activity>
     </application>
 
 </manifest>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,28 +7,35 @@
     tools:context=".MyProfile">
 
     <TextView
-        android:id="@+id/Name"
+        android:id="@+id/textViewMyProfileName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp"
+        android:text=""
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
         tools:layout_editor_absoluteX="146dp"
         tools:layout_editor_absoluteY="179dp"
-        tools:text="First Last" />
+        tools:text="" />
 
     <ImageView
         android:id="@+id/ProfilePicture"
         android:layout_width="150dp"
         android:layout_height="146dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="87dp"
         android:src="@drawable/woman"
         tools:layout_editor_absoluteX="117dp"
         tools:layout_editor_absoluteY="16dp" />
 
     <TextView
-        android:id="@+id/Bio"
+        android:id="@+id/textViewMyProfileBio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Short Bio here"
+        android:layout_centerInParent="true"
+        android:text=""
         tools:layout_editor_absoluteX="148dp"
         tools:layout_editor_absoluteY="238dp" />
 
@@ -36,6 +43,9 @@
         android:id="@+id/MyPuppies"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="203dp"
         android:text="My Puppies:"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
         tools:layout_editor_absoluteX="53dp"
@@ -45,6 +55,9 @@
         android:id="@+id/Puppy3"
         android:layout_width="92dp"
         android:layout_height="66dp"
+        android:layout_alignBottom="@+id/Puppy2"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="35dp"
         android:src="@drawable/puppy"
         tools:layout_editor_absoluteX="224dp"
         tools:layout_editor_absoluteY="368dp" />
@@ -53,6 +66,9 @@
         android:id="@+id/Puppy2"
         android:layout_width="53dp"
         android:layout_height="84dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/Puppy1"
+        android:layout_marginStart="33dp"
         android:src="@drawable/pupper"
         tools:layout_editor_absoluteX="157dp"
         tools:layout_editor_absoluteY="361dp" />
@@ -61,7 +77,19 @@
         android:id="@+id/Puppy1"
         android:layout_width="85dp"
         android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="108dp"
         android:src="@drawable/pup"
         tools:layout_editor_absoluteX="53dp"
         tools:layout_editor_absoluteY="361dp" />
-</android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/buttonEditProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp"
+        android:text="Edit Profile" />
+</RelativeLayout>

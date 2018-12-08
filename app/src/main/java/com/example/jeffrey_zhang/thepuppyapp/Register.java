@@ -14,13 +14,16 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import static android.content.ContentValues.TAG;
 
 public class Register extends Activity implements View.OnClickListener {
 
     private Button buttonRegisterUser;
-    private EditText editTextRegisterEmail, editTextRegisterPassword;
+    private EditText editTextRegisterEmail, editTextRegisterPassword, editTextRegisterDisplayName;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
@@ -32,6 +35,7 @@ public class Register extends Activity implements View.OnClickListener {
         buttonRegisterUser = findViewById(R.id.buttonRegisterUser);
         editTextRegisterEmail = findViewById(R.id.editTextRegisterEmail);
         editTextRegisterPassword = findViewById(R.id.editTextRegisterPassword);
+        editTextRegisterDisplayName = findViewById(R.id.editTextRegisterDisplayName);
 
         buttonRegisterUser.setOnClickListener(this);
 
@@ -55,8 +59,8 @@ public class Register extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         if (view == buttonRegisterUser) {
-            String email = editTextRegisterEmail.getText().toString();
-            String password = editTextRegisterPassword.getText().toString();
+            String email = editTextRegisterEmail.getText().toString().trim();
+            String password = editTextRegisterPassword.getText().toString().trim();
 
             createAccount(email, password);
         }
@@ -77,6 +81,7 @@ public class Register extends Activity implements View.OnClickListener {
     }
 
     public void createAccount(String email, String password) {
+        final String displayName = editTextRegisterDisplayName.getText().toString().trim();
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -84,8 +89,19 @@ public class Register extends Activity implements View.OnClickListener {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
-                            Toast.makeText(Register.this, "You created your " +
-                                    "account!", Toast.LENGTH_SHORT).show();
+                            FirebaseUser user = mAuth.getCurrentUser();
+
+                            User newUser = new User(displayName, user.getEmail(), "",
+                                    user.getUid(), "");
+
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference myRef = database.getReference("users");
+
+                            myRef.child(user.getUid()).setValue(newUser);
+
+                            Toast.makeText(Register.this, "Account created",
+                                    Toast.LENGTH_SHORT).show();
+
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
@@ -94,5 +110,6 @@ public class Register extends Activity implements View.OnClickListener {
                         }
                     }
                 });
+
     }
 }

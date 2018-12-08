@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/myProfileMenuItem"
+        android:title="My Profile" />
+    <item
+        android:id="@+id/homepageMenuItem"
+        android:title="Home" />
+    <item
+        android:id="@+id/puppyPlaydatesMenuItem"
+        android:title="Puppy Playdates" />
+    <item
+        android:id="@+id/barkBoardMenuItem"
+        android:title="Bark Board" />
+    <item
+        android:id="@+id/fetchMenuItem"
+        android:title="Fetch" />
+    <item
+        android:id="@+id/mapMenuItem"
+        android:title="Map" />
+</menu>

@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="115dp"
+        android:layout_marginTop="65dp"
         android:text="Register"
         android:textSize="24sp" />
 
@@ -24,7 +24,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="195dp"
         android:ems="10"
-        android:hint="Register an Email"
+        android:hint="Enter Email"
         android:inputType="textPersonName" />
 
     <EditText
@@ -35,8 +35,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="229dp"
         android:ems="10"
-        android:hint="Register a Password"
-        android:inputType="textPersonName" />
+        android:hint="Enter Password"
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/buttonRegisterUser"
@@ -46,4 +46,15 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="159dp"
         android:text="Register" />
+
+    <EditText
+        android:id="@+id/editTextRegisterDisplayName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="135dp"
+        android:ems="10"
+        android:hint="Enter Full Name"
+        android:inputType="textPersonName" />
 </RelativeLayout>
