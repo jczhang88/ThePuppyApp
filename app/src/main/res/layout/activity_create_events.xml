@@ -65,5 +65,5 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="115dp"
-        android:text="Create Your Event" />
+        android:text="Create Your Playdate!" />
 </RelativeLayout>
