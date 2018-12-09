@@ -64,6 +64,16 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="115dp"
+        android:layout_marginBottom="69dp"
         android:text="Create Your Playdate!" />
+
+    <EditText
+        android:id="@+id/editTextCapacity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextCreateEventDescription"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="Max Event Capacity"
+        android:inputType="textPersonName" />
 </RelativeLayout>

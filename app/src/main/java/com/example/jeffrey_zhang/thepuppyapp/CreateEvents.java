@@ -10,7 +10,7 @@ public class CreateEvents extends Activity implements View.OnClickListener {
 
     private Button buttonCreateYourEvent;
     private EditText editTextCreateEventName, editTextCreateEventLocation, editTextCreateEventDate,
-                     editTextCreateEventDescription;
+                     editTextCreateEventDescription, editTextCapacity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,7 @@ public class CreateEvents extends Activity implements View.OnClickListener {
         editTextCreateEventLocation = findViewById(R.id.editTextCreateEventLocation);
         editTextCreateEventDate = findViewById(R.id.editTextCreateEventDate);
         editTextCreateEventDescription = findViewById(R.id.editTextCreateEventDescription);
+        editTextCapacity = findViewById(R.id.editTextCapacity);
 
         buttonCreateYourEvent.setOnClickListener(this);
     }
@@ -33,7 +34,8 @@ public class CreateEvents extends Activity implements View.OnClickListener {
             String eventLocation = editTextCreateEventLocation.getText().toString();
             String eventDate = editTextCreateEventDate.getText().toString();
             String eventDescription = editTextCreateEventDescription.getText().toString();
-
+            String stringCapacity = editTextCapacity.getText().toString();
+            Integer maxCapacity = Integer.parseInt(stringCapacity);
 
         }
     }
