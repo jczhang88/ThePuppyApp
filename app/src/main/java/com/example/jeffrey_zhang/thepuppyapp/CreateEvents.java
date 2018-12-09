@@ -55,8 +55,8 @@ public class CreateEvents extends Activity implements View.OnClickListener {
 
             // Write the user's input into Firebase database
             myRef.push().setValue(event);
-            Toast.makeText(CreateEvents.this, "Successfully reported a bird " +
-                    "sighting!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(CreateEvents.this, "Successfully created your event!",
+                    Toast.LENGTH_SHORT).show();
         }
     }
 }
