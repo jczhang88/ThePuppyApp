@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -47,14 +48,14 @@ public class CreateEvents extends Activity implements View.OnClickListener {
 
             // Calls Firebase database and gets existing item
             FirebaseDatabase database = FirebaseDatabase.getInstance();
-            DatabaseReference myRef = database.getReference(ZipCode).child("Bird Sightings");
+            DatabaseReference myRef = database.getReference("events").child(uid);
 
             // Add a new bird sighting entry in Firebase database based on the user's information
-            Event event = new Bird(Name, timestamp, ZipCode, 0, email);
+            Event event = new Event(eventName, eventLocation, eventDate, eventDescription, maxCapacity);
 
             // Write the user's input into Firebase database
-            myRef.push().setValue(bird);
-            Toast.makeText(ReportBird.this, "Successfully reported a bird " +
+            myRef.push().setValue(event);
+            Toast.makeText(CreateEvents.this, "Successfully reported a bird " +
                     "sighting!", Toast.LENGTH_SHORT).show();
         }
     }
