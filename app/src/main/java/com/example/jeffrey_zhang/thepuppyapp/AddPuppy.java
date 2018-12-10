@@ -109,10 +109,14 @@ public class AddPuppy extends Activity implements View.OnClickListener {
 
                     final FirebaseDatabase database = FirebaseDatabase.getInstance();
                     final DatabaseReference dogRef = database.getReference("users/"
-                            + dogOwner.getUserID());
+                            + dogOwner.getUserID() + "/dogs");
 
-                    Dog newDog = new Dog(newName, newBreed, age, newTemperament, dogOwner.getDisplayName());
+                    Dog newDog = new Dog(newName, newBreed, age, newTemperament,
+                            dogOwner.getDisplayName());
                     dogRef.child(newDog.getName()).setValue(newDog);
+
+                    finish();
+                    startActivity(new Intent(AddPuppy.this, MyProfile.class));
                 }
             }
 
@@ -182,10 +186,10 @@ public class AddPuppy extends Activity implements View.OnClickListener {
                 if(dataSnapshot.exists()){
                     User dogOwner = dataSnapshot.getValue(User.class);
 
-                    String num_puppy = String.valueOf(1);
-
                     StorageReference propicRef = mStorageRef.child("images/puppyProfilePics/"
-                            + user.getUid() + "/" + num_puppy + "/");
+                            + user.getUid() + "/" + dogOwner.getNum_dogs() + "/");
+
+                    dogOwner.setNum_dogs(dogOwner.getNum_dogs() + 1);
 
                     propicRef.putFile(selectedImageUri)
                             .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
