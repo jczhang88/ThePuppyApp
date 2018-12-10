@@ -40,8 +40,7 @@ public class CreateEvents extends Activity implements View.OnClickListener {
             String eventLocation = editTextCreateEventLocation.getText().toString();
             String eventDate = editTextCreateEventDate.getText().toString();
             String eventDescription = editTextCreateEventDescription.getText().toString();
-            String stringCapacity = editTextCapacity.getText().toString();
-            Integer maxCapacity = Integer.parseInt(stringCapacity);
+            String maxCapacity = editTextCapacity.getText().toString();
 
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             String uid = user.getUid();

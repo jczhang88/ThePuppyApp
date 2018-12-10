@@ -5,7 +5,7 @@ public class Event {
     String eventLocation;
     String eventDate;
     String eventDescription;
-    Integer maxCapacity;
+    String maxCapacity;
     Integer numAttendees;
 
     Event () {
@@ -13,7 +13,7 @@ public class Event {
     }
 
     public Event(String eventName, String eventLocation, String eventDate, String eventDescription,
-                  Integer maxCapacity, Integer numAttendees) {
+                  String maxCapacity, Integer numAttendees) {
         this.eventName = eventName;
         this.eventLocation = eventLocation;
         this.eventDate = eventDate;

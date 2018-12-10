@@ -36,7 +36,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         viewHolder.textViewMyEventName.setText(events.get(i).eventName);
         viewHolder.textViewMyEventLocation.setText(events.get(i).eventLocation);
         viewHolder.textViewMyEventDate.setText(events.get(i).eventDate);
-        viewHolder.textViewCapacity.setText(events.get(i).maxCapacity);
+        viewHolder.textViewCapacity.setText("Capacity: /" + events.get(i).maxCapacity);
         viewHolder.textViewMyEventDescription.setText(events.get(i).eventDescription);
 
         viewHolder.parent_layout.setOnClickListener(new View.OnClickListener() {
