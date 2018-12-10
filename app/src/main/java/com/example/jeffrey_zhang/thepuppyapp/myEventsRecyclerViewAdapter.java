@@ -26,7 +26,7 @@ public class myEventsRecyclerViewAdapter extends RecyclerView.Adapter<myEventsRe
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.
-                layout_list_playdates, viewGroup, false);
+                layout_list_myevents, viewGroup, false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
