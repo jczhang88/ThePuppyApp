@@ -10,12 +10,13 @@
         android:id="@+id/editTextEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="195dp"
         android:ems="10"
         android:hint="Enter Email"
-        android:inputType="textUri|textPersonName" />
+        android:inputType="textUri|textPersonName"
+        android:typeface="sans" />
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -26,7 +27,8 @@
         android:layout_marginBottom="229dp"
         android:ems="10"
         android:hint="Enter Password"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:typeface="sans" />
 
     <TextView
         android:id="@+id/textViewTitle"
@@ -35,8 +37,9 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="115dp"
-        android:text="The Puppy App"
-        android:textSize="24sp" />
+        android:text="THE PUPPY APP"
+        android:textSize="36sp"
+        android:typeface="serif" />
 
     <Button
         android:id="@+id/buttonLogin"
@@ -55,4 +58,13 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="89dp"
         android:text="Register" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="71dp"
+        android:layout_height="76dp"
+        android:layout_alignEnd="@+id/buttonRegister"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/playdates" />
 </RelativeLayout>

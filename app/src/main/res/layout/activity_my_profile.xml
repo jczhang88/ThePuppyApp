@@ -42,32 +42,32 @@
         tools:layout_editor_absoluteY="290dp" />
 
     <ImageView
-        android:id="@+id/Puppy1"
-        android:layout_width="85dp"
-        android:layout_height="80dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/puppy"
-        android:layout_marginEnd="22dp"
-        tools:layout_editor_absoluteX="53dp"
-        tools:layout_editor_absoluteY="361dp" />
-
-    <ImageView
-        android:id="@+id/puppy2"
+        android:id="@+id/imageViewPuppy1"
         android:layout_width="85dp"
         android:layout_height="80dp"
         android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/Puppy1"
+        android:layout_alignTop="@+id/imageViewPuppy3"
         android:layout_marginStart="22dp"
         tools:layout_editor_absoluteX="53dp"
         tools:layout_editor_absoluteY="361dp" />
 
     <ImageView
-        android:id="@+id/puppy"
+        android:id="@+id/imageViewPuppy2"
         android:layout_width="85dp"
         android:layout_height="80dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="134dp"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="361dp" />
+
+    <ImageView
+        android:id="@+id/imageViewPuppy3"
+        android:layout_width="85dp"
+        android:layout_height="80dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/imageViewPuppy2"
+        android:layout_marginEnd="22dp"
         tools:layout_editor_absoluteX="53dp"
         tools:layout_editor_absoluteY="361dp" />
 
