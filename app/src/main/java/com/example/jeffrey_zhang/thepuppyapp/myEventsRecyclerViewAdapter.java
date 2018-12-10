@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class myEventsRecyclerViewAdapter extends RecyclerView.Adapter<myEventsRecyclerViewAdapter.ViewHolder> {
+public class myEventsRecyclerViewAdapter extends RecyclerView.Adapter<myEventsRecyclerViewAdapter.ViewHolder_myEvents> {
 
     private ArrayList<Event> events;
     private Context mContext;
@@ -24,15 +24,15 @@ public class myEventsRecyclerViewAdapter extends RecyclerView.Adapter<myEventsRe
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public ViewHolder_myEvents onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.
                 layout_list_myevents, viewGroup, false);
-        ViewHolder viewHolder = new ViewHolder(view);
+        ViewHolder_myEvents viewHolder = new ViewHolder_myEvents(view);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
+    public void onBindViewHolder(@NonNull ViewHolder_myEvents viewHolder, final int i) {
         viewHolder.textViewMyEventName.setText(events.get(i).eventName);
         viewHolder.textViewMyEventLocation.setText("Location: " + events.get(i).eventLocation);
         viewHolder.textViewMyEventDate.setText("Date: " + events.get(i).eventDate);
@@ -53,13 +53,13 @@ public class myEventsRecyclerViewAdapter extends RecyclerView.Adapter<myEventsRe
         return events.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder_myEvents extends RecyclerView.ViewHolder {
 
         TextView textViewMyEventName, textViewMyEventLocation, textViewMyEventDate, textViewCapacity,
                 textViewMyEventDescription;
         RelativeLayout my_events_layout;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder_myEvents(@NonNull View itemView) {
             super(itemView);
 
             textViewMyEventName = itemView.findViewById(R.id.textViewMyEventName);
