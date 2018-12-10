@@ -107,9 +107,10 @@ public class PuppyPlaydates extends Activity implements View.OnClickListener {
                 // whenever data at this location is updated.
                 for (DataSnapshot userChild : userSnapshot.getChildren()) {
                     User user = userChild.getValue(User.class);
-                    final String userID = user.userID;
+                    final String userID = user.getUserID();
 
                     DatabaseReference eventsRef = database.getReference("events");
+
                     eventsRef.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot eventSnapshot) {
@@ -117,12 +118,12 @@ public class PuppyPlaydates extends Activity implements View.OnClickListener {
                                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                                 String uid = user.getUid();
 
-
-                                if (userID.equals(uid)) {
+                                if (!userID.equals(uid)) {
                                     Event playdate = eventChild.getValue(Event.class);
                                     playdates.add(playdate);
                                 }
                             }
+                            playdatesRecyclerViewAdapter.notifyDataSetChanged();
                         }
 
                         @Override
@@ -132,7 +133,6 @@ public class PuppyPlaydates extends Activity implements View.OnClickListener {
 
                     });
                 }
-                playdatesRecyclerViewAdapter.notifyDataSetChanged();
             }
 
             @Override
