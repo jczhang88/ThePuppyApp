@@ -51,7 +51,6 @@ public class MyProfile extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_my_profile);
 
         textViewMyProfileName = findViewById(R.id.textViewMyProfileName);
-        textViewMyProfileBio = findViewById(R.id.textViewMyProfileBio);
         buttonEditProfile = findViewById(R.id.buttonEditProfile);
         imageViewProfilePicture = findViewById(R.id.imageViewProfilePicture);
         mStorageRef2 = FirebaseStorage.getInstance().getReference();

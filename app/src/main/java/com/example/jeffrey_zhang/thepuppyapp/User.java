@@ -1,22 +1,27 @@
 package com.example.jeffrey_zhang.thepuppyapp;
 
+import java.util.Vector;
+
 public class User {
 
     private String displayName;
     private String emailAddress;
-    private String profilePicUrl;
     private String userID;
-    private String bio;
 
     User(){}
 
-    public User(String displayName, String emailAddress, String profilePicUrl, String userID,
-                String bio) {
+    public User(String displayName, String emailAddress, String userID, String nickname) {
         this.displayName = displayName;
         this.emailAddress = emailAddress;
-        this.profilePicUrl = profilePicUrl;
         this.userID = userID;
-        this.bio = bio;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
+    }
+
+    public String getUserID() {
+        return userID;
     }
 
     public String getDisplayName() {
@@ -27,9 +32,6 @@ public class User {
         return emailAddress;
     }
 
-    public String getProfilePicUrl() {
-        return profilePicUrl;
-    }
 
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
@@ -39,7 +41,4 @@ public class User {
         this.emailAddress = emailAddress;
     }
 
-    public void setProfilePicUrl(String profilePicUrl) {
-        this.profilePicUrl = profilePicUrl;
-    }
 }

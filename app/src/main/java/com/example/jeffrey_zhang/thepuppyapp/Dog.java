@@ -5,17 +5,15 @@ public class Dog {
     private String name;
     private String breed;
     private int age;
-    private String profilePicUrl;
     private String temperament;
     private String ownerName;
 
     Dog(){}
 
-    public Dog(String name, String breed, int age, String profilePicUrl, String temperament, String ownerName) {
+    public Dog(String name, String breed, int age, String temperament, String ownerName) {
         this.name = name;
         this.breed = breed;
         this.age = age;
-        this.profilePicUrl = profilePicUrl;
         this.temperament = temperament;
         this.ownerName = ownerName;
     }
@@ -30,10 +28,6 @@ public class Dog {
 
     public int getAge() {
         return age;
-    }
-
-    public String getProfilePicUrl() {
-        return profilePicUrl;
     }
 
     public String getTemperament() {
@@ -54,10 +48,6 @@ public class Dog {
 
     public void setAge(int age) {
         this.age = age;
-    }
-
-    public void setProfilePicUrl(String profilePicUrl) {
-        this.profilePicUrl = profilePicUrl;
     }
 
     public void setTemperament(String temperament) {

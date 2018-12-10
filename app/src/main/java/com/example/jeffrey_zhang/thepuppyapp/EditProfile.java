@@ -45,6 +45,7 @@ public class EditProfile extends Activity implements View.OnClickListener {
     private FirebaseAuth mAuth;
     private EditText editTextDisplayName;
     private Button buttonEditName;
+    private Button buttonAddPuppy;
 
 
     @Override
@@ -59,10 +60,12 @@ public class EditProfile extends Activity implements View.OnClickListener {
         mAuth = FirebaseAuth.getInstance();
         editTextDisplayName= findViewById(R.id.editTextDisplayName);
         buttonEditName = findViewById(R.id.buttonEditName);
+        buttonAddPuppy = findViewById(R.id.buttonAddPuppy);
 
         buttonSelectImage.setOnClickListener(this);
         buttonUploadImage.setOnClickListener(this);
         buttonEditName.setOnClickListener(this);
+        buttonAddPuppy.setOnClickListener(this);
     }
 
     @Override
@@ -76,21 +79,27 @@ public class EditProfile extends Activity implements View.OnClickListener {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()){
             case R.id.myProfileMenuItem:
+                finish();
                 startActivity(new Intent(this, MyProfile.class));
                 return true;
             case R.id.homepageMenuItem:
+                finish();
                 startActivity(new Intent(this, HomePage.class));
                 return true;
             case R.id.puppyPlaydatesMenuItem:
+                finish();
                 startActivity(new Intent(this, PuppyPlaydates.class));
                 return true;
             case R.id.barkBoardMenuItem:
+                finish();
                 startActivity(new Intent(this, BarkBoard.class));
                 return true;
             case R.id.fetchMenuItem:
+                finish();
                 startActivity(new Intent(this, BrowseDoggies.class));
                 return true;
             case R.id.mapMenuItem:
+                finish();
                 startActivity(new Intent(this, Map.class));
                 return true;
             default:
@@ -110,6 +119,10 @@ public class EditProfile extends Activity implements View.OnClickListener {
 
         else if(view == buttonEditName){
             editName();
+        }
+
+        else if(view == buttonAddPuppy){
+            startActivity(new Intent(EditProfile.this, AddPuppy.class));
         }
     }
 
