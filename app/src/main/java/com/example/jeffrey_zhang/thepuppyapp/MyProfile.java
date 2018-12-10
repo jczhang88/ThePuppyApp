@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.internal.Storage;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -133,6 +134,11 @@ public class MyProfile extends Activity implements View.OnClickListener {
                 return true;
             case R.id.mapMenuItem:
                 startActivity(new Intent(this, Map.class));
+                return true;
+            case R.id.signOutMenuItem:
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(this, ThePuppyApp.class));
+                Toast.makeText(this, "Signed out", Toast.LENGTH_SHORT).show();
                 return true;
             default:
                 return false;

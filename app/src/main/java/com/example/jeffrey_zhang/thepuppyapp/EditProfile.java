@@ -93,6 +93,11 @@ public class EditProfile extends Activity implements View.OnClickListener {
             case R.id.mapMenuItem:
                 startActivity(new Intent(this, Map.class));
                 return true;
+            case R.id.signOutMenuItem:
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(this, ThePuppyApp.class));
+                Toast.makeText(this, "Signed out", Toast.LENGTH_SHORT).show();
+                return true;
             default:
                 return false;
         }

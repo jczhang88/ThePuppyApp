@@ -9,6 +9,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class HomePage extends Activity implements View.OnClickListener{
 
@@ -57,6 +60,11 @@ public class HomePage extends Activity implements View.OnClickListener{
                 return true;
             case R.id.mapMenuItem:
                 startActivity(new Intent(this, Map.class));
+                return true;
+            case R.id.signOutMenuItem:
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(this, ThePuppyApp.class));
+                Toast.makeText(this, "Signed out", Toast.LENGTH_SHORT).show();
                 return true;
             default:
                 return false;

@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -64,6 +65,11 @@ public class MyEvents extends Activity {
                 return true;
             case R.id.mapMenuItem:
                 startActivity(new Intent(this, Map.class));
+                return true;
+            case R.id.signOutMenuItem:
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(this, ThePuppyApp.class));
+                Toast.makeText(this, "Signed out", Toast.LENGTH_SHORT).show();
                 return true;
             default:
                 return false;

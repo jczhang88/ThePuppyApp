@@ -11,6 +11,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -72,6 +73,11 @@ public class PuppyPlaydates extends Activity implements View.OnClickListener {
             case R.id.mapMenuItem:
                 startActivity(new Intent(this, Map.class));
                 return true;
+            case R.id.signOutMenuItem:
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(this, ThePuppyApp.class));
+                Toast.makeText(this, "Signed out", Toast.LENGTH_SHORT).show();
+                return true;
             default:
                 return false;
         }
@@ -90,21 +96,41 @@ public class PuppyPlaydates extends Activity implements View.OnClickListener {
 
     private void getPlaydates() {
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        String uid = user.getUid();
-
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference eventsRef = database.getReference("events").child(uid);
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference usersRef = database.getReference("users");
 
         // Read from the database
-        eventsRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        usersRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+            public void onDataChange(DataSnapshot userSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                for (DataSnapshot child : dataSnapshot.getChildren()) {
-                    Event playdate = child.getValue(Event.class);
-                    playdates.add(playdate);
+                for (DataSnapshot userChild : userSnapshot.getChildren()) {
+                    User user = userChild.getValue(User.class);
+                    final String userID = user.userID;
+
+                    DatabaseReference eventsRef = database.getReference("events");
+                    eventsRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot eventSnapshot) {
+                            for (DataSnapshot eventChild : eventSnapshot.getChildren()) {
+                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                                String uid = user.getUid();
+
+
+                                if (userID.equals(uid)) {
+                                    Event playdate = eventChild.getValue(Event.class);
+                                    playdates.add(playdate);
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+
+                    });
                 }
                 playdatesRecyclerViewAdapter.notifyDataSetChanged();
             }

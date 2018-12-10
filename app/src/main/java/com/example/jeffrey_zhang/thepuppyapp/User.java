@@ -5,7 +5,7 @@ public class User {
     private String displayName;
     private String emailAddress;
     private String profilePicUrl;
-    private String userID;
+    public String userID;
     private String bio;
 
     User(){}
