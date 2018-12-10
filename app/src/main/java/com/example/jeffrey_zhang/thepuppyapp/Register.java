@@ -90,8 +90,7 @@ public class Register extends Activity implements View.OnClickListener {
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
 
-                            User newUser = new User(displayName, user.getEmail(), user.getUid(),
-                                    "The Kind");
+                            User newUser = new User(displayName, user.getEmail(), user.getUid());
 
                             FirebaseDatabase database = FirebaseDatabase.getInstance();
                             DatabaseReference myRef = database.getReference("users");

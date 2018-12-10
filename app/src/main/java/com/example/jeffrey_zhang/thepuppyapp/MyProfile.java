@@ -39,11 +39,16 @@ import java.net.URI;
 public class MyProfile extends Activity implements View.OnClickListener {
 
     private TextView textViewMyProfileName;
-    private TextView textViewMyProfileBio;
     private Button buttonEditProfile;
     private FirebaseAuth mAuth;
     private ImageView imageViewProfilePicture;
+    private ImageView imageViewMyProfilePuppy1;
+    private ImageView imageViewMyProfilePuppy2;
+    private ImageView imageViewMyProfilePuppy3;
     private StorageReference mStorageRef2;
+    private StorageReference puppyStorage1;
+    private StorageReference puppyStorage2;
+    private StorageReference puppyStorage3;
     
 
     @Override
@@ -52,14 +57,23 @@ public class MyProfile extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_my_profile);
 
         textViewMyProfileName = findViewById(R.id.textViewMyProfileName);
+        imageViewMyProfilePuppy1 = findViewById(R.id.imageViewPuppy1);
+        imageViewMyProfilePuppy2 = findViewById(R.id.imageViewPuppy2);
+        imageViewMyProfilePuppy3 = findViewById(R.id.imageViewPuppy3);
+
         buttonEditProfile = findViewById(R.id.buttonEditProfile);
         imageViewProfilePicture = findViewById(R.id.imageViewProfilePicture);
         mStorageRef2 = FirebaseStorage.getInstance().getReference();
+        puppyStorage1 = FirebaseStorage.getInstance().getReference();
+        puppyStorage2 = FirebaseStorage.getInstance().getReference();
+        puppyStorage3 = FirebaseStorage.getInstance().getReference();
+
         try{
             downloadAndSetImage();
         } catch(IOException exc){
 
         }
+
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
 
@@ -99,6 +113,7 @@ public class MyProfile extends Activity implements View.OnClickListener {
 
             }
         });
+
 
         buttonEditProfile.setOnClickListener(this);
 
@@ -170,6 +185,50 @@ public class MyProfile extends Activity implements View.OnClickListener {
                 // ...
             }
         });
+    }
+
+    private void downloadandSetPuppyImages(){
+        mAuth = FirebaseAuth.getInstance();
+        final FirebaseUser user = mAuth.getCurrentUser();
+
+
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final DatabaseReference myRef = database.getReference("users");
+        Query current_user = myRef.orderByChild("emailAddress").equalTo(user.getEmail());
+
+        current_user.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                if(dataSnapshot.exists()){
+                    User curr_user = dataSnapshot.getValue(User.class);
+
+
+                    if(curr_user.getNum_dogs() > 0){
+                    }
+                }
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
     }
 
 
