@@ -34,8 +34,16 @@
         android:id="@+id/textViewMyEventDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textViewMyEventDate"
+        android:layout_below="@id/textViewCapacity"
         android:layout_marginLeft="50dp"
         android:text="Description" />
+
+    <TextView
+        android:id="@+id/textViewCapacity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewMyEventDate"
+        android:layout_marginLeft="50dp"
+        android:text="Capacity" />
 
 </RelativeLayout>

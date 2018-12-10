@@ -51,7 +51,8 @@ public class CreateEvents extends Activity implements View.OnClickListener {
             DatabaseReference myRef = database.getReference("events").child(uid);
 
             // Add a new bird sighting entry in Firebase database based on the user's information
-            Event event = new Event(eventName, eventLocation, eventDate, eventDescription, maxCapacity);
+            Event event = new Event(eventName, eventLocation, eventDate, eventDescription,
+                    maxCapacity, 0);
 
             // Write the user's input into Firebase database
             myRef.push().setValue(event);

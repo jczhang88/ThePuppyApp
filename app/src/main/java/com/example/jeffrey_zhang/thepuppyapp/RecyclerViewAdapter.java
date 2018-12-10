@@ -36,6 +36,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         viewHolder.textViewMyEventName.setText(events.get(i).eventName);
         viewHolder.textViewMyEventLocation.setText(events.get(i).eventLocation);
         viewHolder.textViewMyEventDate.setText(events.get(i).eventDate);
+        viewHolder.textViewCapacity.setText(events.get(i).maxCapacity);
         viewHolder.textViewMyEventDescription.setText(events.get(i).eventDescription);
 
         viewHolder.parent_layout.setOnClickListener(new View.OnClickListener() {
@@ -53,7 +54,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textViewMyEventName, textViewMyEventLocation, textViewMyEventDate,
+        TextView textViewMyEventName, textViewMyEventLocation, textViewMyEventDate, textViewCapacity,
                 textViewMyEventDescription;
         RelativeLayout parent_layout;
 
@@ -63,6 +64,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             textViewMyEventName = itemView.findViewById(R.id.textViewMyEventName);
             textViewMyEventLocation = itemView.findViewById(R.id.textViewMyEventLocation);
             textViewMyEventDate = itemView.findViewById(R.id.textViewMyEventDate);
+            textViewCapacity = itemView.findViewById(R.id.textViewCapacity);
             textViewMyEventDescription = itemView.findViewById(R.id.textViewMyEventDescription);
             parent_layout = itemView.findViewById(R.id.parent_layout);
         }
