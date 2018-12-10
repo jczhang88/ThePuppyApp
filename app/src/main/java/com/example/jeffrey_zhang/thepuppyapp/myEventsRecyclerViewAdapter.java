@@ -12,12 +12,12 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
+public class myEventsRecyclerViewAdapter extends RecyclerView.Adapter<myEventsRecyclerViewAdapter.ViewHolder> {
 
     private ArrayList<Event> events;
     private Context mContext;
 
-    RecyclerViewAdapter(ArrayList<Event> events, Context mContext) {
+    myEventsRecyclerViewAdapter(ArrayList<Event> events, Context mContext) {
         this.events = events;
         this.mContext = mContext;
     }
@@ -40,7 +40,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 "/" + events.get(i).maxCapacity);
         viewHolder.textViewMyEventDescription.setText(events.get(i).eventDescription);
 
-        viewHolder.parent_layout.setOnClickListener(new View.OnClickListener() {
+        viewHolder.my_events_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(mContext, events.get(i).eventName, Toast.LENGTH_SHORT).show();
@@ -57,7 +57,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         TextView textViewMyEventName, textViewMyEventLocation, textViewMyEventDate, textViewCapacity,
                 textViewMyEventDescription;
-        RelativeLayout parent_layout;
+        RelativeLayout my_events_layout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -67,7 +67,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             textViewMyEventDate = itemView.findViewById(R.id.textViewMyEventDate);
             textViewCapacity = itemView.findViewById(R.id.textViewCapacity);
             textViewMyEventDescription = itemView.findViewById(R.id.textViewMyEventDescription);
-            parent_layout = itemView.findViewById(R.id.parent_layout);
+            my_events_layout = itemView.findViewById(R.id.my_events_layout);
         }
     }
 }

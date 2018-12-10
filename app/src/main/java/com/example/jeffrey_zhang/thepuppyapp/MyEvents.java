@@ -25,7 +25,7 @@ import java.util.ArrayList;
 public class MyEvents extends Activity {
 
     private ArrayList<Event> events;
-    private RecyclerViewAdapter recyclerViewAdapter;
+    private myEventsRecyclerViewAdapter myEventsRecyclerViewAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +88,7 @@ public class MyEvents extends Activity {
                     Event event = child.getValue(Event.class);
                     events.add(event);
                 }
-                recyclerViewAdapter.notifyDataSetChanged();
+                myEventsRecyclerViewAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -100,8 +100,8 @@ public class MyEvents extends Activity {
 
     private void initRecyclerView() {
         RecyclerView recyclerViewMyEvents = findViewById(R.id.recyclerViewMyEvents);
-        recyclerViewAdapter = new RecyclerViewAdapter(events, this);
-        recyclerViewMyEvents.setAdapter(recyclerViewAdapter);
+        myEventsRecyclerViewAdapter = new myEventsRecyclerViewAdapter(events, this);
+        recyclerViewMyEvents.setAdapter(myEventsRecyclerViewAdapter);
         recyclerViewMyEvents.setLayoutManager(new LinearLayoutManager(this));
     }
 }
