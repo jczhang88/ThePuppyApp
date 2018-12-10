@@ -1,19 +1,24 @@
 package com.example.jeffrey_zhang.thepuppyapp;
 
-public class Events {
+public class Event {
     String eventName;
     String eventLocation;
     String eventDate;
     String eventDescription;
+    String maxCapacity;
+    Integer numAttendees;
 
-    Events () {
+    Event () {
 
     }
 
-    public Events(String eventName, String eventLocation, String eventDate, String eventDescription) {
+    public Event(String eventName, String eventLocation, String eventDate, String eventDescription,
+                  String maxCapacity, Integer numAttendees) {
         this.eventName = eventName;
         this.eventLocation = eventLocation;
         this.eventDate = eventDate;
         this.eventDescription = eventDescription;
+        this.maxCapacity = maxCapacity;
+        this.numAttendees = numAttendees;
     }
 }

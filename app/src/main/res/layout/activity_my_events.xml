@@ -13,8 +13,14 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="56dp"
-        android:text="My Events"
-        android:textSize="18sp"
+        android:text="My Playdates"
+        android:textSize="24sp"
         tools:layout_editor_absoluteX="151dp"
         tools:layout_editor_absoluteY="62dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerViewMyEvents"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp" />
 </RelativeLayout>

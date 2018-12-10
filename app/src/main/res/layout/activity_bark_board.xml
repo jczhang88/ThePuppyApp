@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,6 +10,9 @@
         android:id="@+id/Post1"
         android:layout_width="265dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
         android:text="Weekly Dog Walker Post: Match Busy People with Dog Walkers!"
         tools:layout_editor_absoluteX="60dp"
         tools:layout_editor_absoluteY="40dp" />
@@ -18,15 +21,17 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Just got a new dog, I love him!"
-        tools:layout_editor_absoluteX="60dp"
-        tools:layout_editor_absoluteY="106dp" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="205dp"
+        android:text="Just got a new dog, I love him!" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Say hello to Sparky!"
-        tools:layout_editor_absoluteX="60dp"
-        tools:layout_editor_absoluteY="158dp" />
-</android.support.constraint.ConstraintLayout>
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="275dp"
+        android:text="Say hello to Sparky!" />
+</RelativeLayout>
