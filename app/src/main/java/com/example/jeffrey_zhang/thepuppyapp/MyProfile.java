@@ -42,9 +42,6 @@ public class MyProfile extends Activity implements View.OnClickListener {
     private Button buttonEditProfile;
     private FirebaseAuth mAuth;
     private ImageView imageViewProfilePicture;
-    private ImageView imageViewMyProfilePuppy1;
-    private ImageView imageViewMyProfilePuppy2;
-    private ImageView imageViewMyProfilePuppy3;
     private StorageReference mStorageRef2;
     
 
@@ -54,9 +51,6 @@ public class MyProfile extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_my_profile);
 
         textViewMyProfileName = findViewById(R.id.textViewMyProfileName);
-        imageViewMyProfilePuppy1 = findViewById(R.id.imageViewPuppy1);
-        imageViewMyProfilePuppy2 = findViewById(R.id.imageViewPuppy2);
-        imageViewMyProfilePuppy3 = findViewById(R.id.imageViewPuppy3);
 
         buttonEditProfile = findViewById(R.id.buttonEditProfile);
         imageViewProfilePicture = findViewById(R.id.imageViewProfilePicture);
@@ -216,12 +210,12 @@ public class MyProfile extends Activity implements View.OnClickListener {
                                     public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                                         // Successfully downloaded data to local file
                                         // ..
-                                        try {
-                                            Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), Uri.fromFile(localFile));
-                                            imageViewMyProfilePuppy1.setImageBitmap(bitmap);
-                                        } catch (IOException e) {
-                                            e.printStackTrace();
-                                        }
+//                                        try {
+//                                            Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), Uri.fromFile(localFile));
+//                                            imageViewMyProfilePuppy1.setImageBitmap(bitmap);
+//                                        } catch (IOException e) {
+//                                            e.printStackTrace();
+//                                        }
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
                             @Override
