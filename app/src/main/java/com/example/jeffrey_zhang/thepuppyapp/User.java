@@ -1,7 +1,5 @@
 package com.example.jeffrey_zhang.thepuppyapp;
 
-import java.util.Vector;
-
 public class User {
 
     private String displayName;
