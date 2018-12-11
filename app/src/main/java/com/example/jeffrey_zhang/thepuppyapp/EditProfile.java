@@ -7,7 +7,6 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -46,6 +45,9 @@ public class EditProfile extends Activity implements View.OnClickListener {
     private EditText editTextDisplayName;
     private Button buttonEditName;
     private Button buttonAddPuppy;
+    private EditText editTextEditBio;
+    private EditText editTextLocation;
+    private Button buttonUpdateProfile;
 
 
     @Override
@@ -60,8 +62,13 @@ public class EditProfile extends Activity implements View.OnClickListener {
         mAuth = FirebaseAuth.getInstance();
         editTextDisplayName= findViewById(R.id.editTextDisplayName);
         buttonEditName = findViewById(R.id.buttonEditName);
+        buttonUpdateProfile = findViewById(R.id.button);
         buttonAddPuppy = findViewById(R.id.buttonAddPuppy);
+        editTextEditBio = findViewById(R.id.editTextEditBio);
+        editTextLocation = findViewById(R.id.editText2);
+        buttonUpdateProfile = findViewById(R.id.button);
 
+        buttonUpdateProfile.setOnClickListener(this);
         buttonSelectImage.setOnClickListener(this);
         buttonUploadImage.setOnClickListener(this);
         buttonEditName.setOnClickListener(this);
@@ -128,6 +135,10 @@ public class EditProfile extends Activity implements View.OnClickListener {
 
         else if(view == buttonAddPuppy){
             startActivity(new Intent(EditProfile.this, AddPuppy.class));
+        }
+
+        else if(view == buttonUpdateProfile){
+            editName();
         }
     }
 
@@ -202,6 +213,82 @@ public class EditProfile extends Activity implements View.OnClickListener {
 
                     myRef.child(user.getUid()).setValue(editUser);
 
+
+                }
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+        final String newLocation = editTextLocation.getText().toString().trim();
+
+            Query location_change = myRef.orderByChild("emailAddress").equalTo(user.getEmail());
+
+            location_change.addChildEventListener(new ChildEventListener() {
+                @Override
+                public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                    if (dataSnapshot.exists()) {
+                        User editUser = dataSnapshot.getValue(User.class);
+
+                        editUser.setLocation(newLocation);
+
+                        myRef.child(user.getUid()).setValue(editUser);
+
+                    }
+                }
+
+                @Override
+                public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+                }
+
+                @Override
+                public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+                }
+
+                @Override
+                public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+
+        final String userBio = editTextEditBio.getText().toString().trim();
+        Query bio_change = myRef.orderByChild("emailAddress").equalTo(user.getEmail());
+
+        bio_change.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                if (dataSnapshot.exists()) {
+                    User editUser = dataSnapshot.getValue(User.class);
+
+                    editUser.setBio(userBio);
+
+                    myRef.child(user.getUid()).setValue(editUser);
 
                 }
             }
