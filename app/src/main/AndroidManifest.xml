@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.jeffrey_zhang.thepuppyapp">
 
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
@@ -14,6 +16,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.google.android.gms.vision"
+            android:value="@integer/google_play_services_version">
+        </meta-data>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/YOUR_API_KEY">
+
+        </meta-data>
+
         <activity android:name=".ThePuppyApp"
             android:theme="@style/PuppyAppTheme">
             <intent-filter>

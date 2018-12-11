@@ -28,6 +28,11 @@ public class PuppyPlaydates extends Activity implements View.OnClickListener {
     private Button buttonMyEvents, buttonCreateEvents;
     private ArrayList<Event> playdates;
     private playdatesRecyclerViewAdapter playdatesRecyclerViewAdapter;
+    private String currentID;
+
+    private void setUserID (String newID) {
+        currentID = newID;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,18 +112,17 @@ public class PuppyPlaydates extends Activity implements View.OnClickListener {
                 // whenever data at this location is updated.
                 for (DataSnapshot userChild : userSnapshot.getChildren()) {
                     User user = userChild.getValue(User.class);
-                    final String userID = user.getUserID();
+                    setUserID(user.getUserID());
 
-                    DatabaseReference eventsRef = database.getReference("events");
-
+                    DatabaseReference eventsRef = database.getReference("events").child(currentID);
                     eventsRef.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot eventSnapshot) {
                             for (DataSnapshot eventChild : eventSnapshot.getChildren()) {
-                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                                String uid = user.getUid();
+                                FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+                                String uid = firebaseUser.getUid();
 
-                                if (!userID.equals(uid)) {
+                                if (!uid.equals(currentID)) {
                                     Event playdate = eventChild.getValue(Event.class);
                                     playdates.add(playdate);
                                 }

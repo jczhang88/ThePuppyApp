@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">ThePuppyApp</string>
+    <string name="YOUR_API_KEY">AIzaSyDjvr1TtDDdaGj2wymJT6DYX1hhbHM9zto</string>
     <string name="title_activity_my_profile">MyProfile</string>
     <string name="title_activity_puppy_profile">PuppyProfile</string>
     <string name="title_activity_browse_doggies">BrowseDoggies</string>
