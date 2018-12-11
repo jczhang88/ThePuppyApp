@@ -12,9 +12,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="41dp"
-        android:text="Add your Puppy!"
-        android:textSize="24sp"
+        android:layout_marginTop="40dp"
+        android:text="Add Your Puppy"
+        android:textSize="30sp"
+        android:typeface="serif"
         tools:layout_editor_absoluteX="112dp"
         tools:layout_editor_absoluteY="57dp" />
 
@@ -22,9 +23,8 @@
         android:id="@+id/buttonAddPuppySelectImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/buttonAddPuppyUploadImage"
-        android:layout_marginStart="38dp"
+        android:layout_alignStart="@+id/editTextAddPuppyTemperament"
+        android:layout_centerVertical="true"
         android:text="Select Image"
         tools:layout_editor_absoluteX="48dp"
         tools:layout_editor_absoluteY="348dp" />
@@ -33,34 +33,31 @@
         android:id="@+id/buttonAddPuppyUploadImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="84dp"
-        android:layout_marginEnd="18dp"
+        android:layout_alignEnd="@+id/editTextAddPuppyTemperament"
+        android:layout_centerVertical="true"
         android:text="Upload Image"
         tools:layout_editor_absoluteX="217dp"
         tools:layout_editor_absoluteY="348dp" />
 
     <EditText
         android:id="@+id/editTextAddPuppyTemperament"
-        android:layout_width="253dp"
+        android:layout_width="276dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="184dp"
+        android:layout_marginBottom="104dp"
         android:ems="10"
-        android:hint="Enter Puppy's temperament"
+        android:hint="Enter a bio for your pup!"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="94dp"
         tools:layout_editor_absoluteY="109dp" />
 
     <EditText
         android:id="@+id/editTextAddPuppyName"
-        android:layout_width="wrap_content"
+        android:layout_width="276dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_above="@+id/editTextAddPuppyBreed"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
         android:ems="10"
         android:hint="Enter Puppy's Name"
         android:inputType="textPersonName"
@@ -69,11 +66,11 @@
 
     <Button
         android:id="@+id/buttonAddPuppyAdd"
-        android:layout_width="wrap_content"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="22dp"
         android:text="Add Puppy" />
 
     <ImageView
@@ -86,10 +83,8 @@
         android:id="@+id/editTextAddPuppyBreed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="195dp"
-        android:layout_marginStart="23dp"
+        android:layout_above="@+id/editTextAddPuppyTemperament"
+        android:layout_alignStart="@+id/editTextAddPuppyTemperament"
         android:ems="10"
         android:hint="Enter Puppy's breed"
         android:inputType="text"
@@ -99,9 +94,17 @@
         android:id="@+id/editTextAddPuppyAge"
         android:layout_width="63dp"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/editTextAddPuppyTemperament"
         android:layout_alignTop="@+id/editTextAddPuppyBreed"
+        android:layout_toEndOf="@+id/editTextAddPuppyBreed"
         android:ems="10"
         android:hint="Age"
         android:inputType="textPersonName" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="149dp"
+        android:layout_height="199dp"
+        android:layout_above="@+id/imageViewAddPuppy"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/playdates" />
 </RelativeLayout>

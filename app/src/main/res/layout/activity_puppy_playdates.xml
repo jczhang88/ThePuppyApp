@@ -44,7 +44,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="37dp"
         android:text="Puppy Playdates"
-        android:textSize="24sp" />
+        android:textSize="30sp"
+        android:typeface="serif" />
 </RelativeLayout>

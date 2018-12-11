@@ -12,45 +12,65 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="222dp"
-        android:text="TextView"
+        android:layout_marginBottom="197dp"
+        android:text="Louie"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        android:textSize="26sp"
+        android:typeface="serif"
         tools:layout_editor_absoluteX="53dp"
-        tools:layout_editor_absoluteY="314dp"
-        tools:text="Puppy Name" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="321dp"
-        android:layout_height="246dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="65dp"
-        android:src="@drawable/puppy"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="49dp" />
+        tools:layout_editor_absoluteY="314dp" />
 
     <TextView
         android:id="@+id/Breed"
         android:layout_width="wrap_content"
-        android:layout_height="16dp"
-        android:layout_alignParentBottom="true"
+        android:layout_height="38dp"
+        android:layout_below="@+id/PuppyName"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="177dp"
-        android:text="TextView"
+        android:layout_marginTop="-194dp"
+        android:text="Golden Retriever"
+        android:textSize="22sp"
+        android:textStyle="italic"
         tools:layout_editor_absoluteX="53dp"
-        tools:layout_editor_absoluteY="360dp"
-        tools:text="Golden Retriever" />
+        tools:layout_editor_absoluteY="360dp" />
 
     <TextView
         android:id="@+id/PuppyBio"
-        android:layout_width="wrap_content"
+        android:layout_width="336dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="121dp"
-        android:text="TextView"
+        android:layout_marginBottom="30dp"
+        android:text="I'm Louie and I love to play games! My favorite place is the Olson Dog Park. My favorite games are frisbee and fetch, and making new friends is always fun for me!"
+        android:textSize="18sp"
         tools:layout_editor_absoluteX="53dp"
-        tools:layout_editor_absoluteY="389dp"
-        tools:text="Example Bio Here" />
+        tools:layout_editor_absoluteY="389dp" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="198dp"
+        android:layout_height="201dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="77dp"
+        android:src="@drawable/pup" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp"
+        android:text="Fetch!"
+        android:textSize="30sp"
+        android:typeface="serif" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Breed"
+        android:layout_centerHorizontal="true"
+        android:text="Ann Arbor, MI"
+        android:textSize="20sp" />
 </RelativeLayout>

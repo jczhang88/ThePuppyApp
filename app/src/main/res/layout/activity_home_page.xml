@@ -14,103 +14,86 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="22dp"
         android:text="The Puppy App"
-        android:textSize="24sp" />
-
-    <ImageButton
-        android:id="@+id/imageButtonBarkBoard"
-        android:layout_width="176dp"
-        android:layout_height="175dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="112dp"
-        android:layout_marginEnd="-262dp"
-        android:layout_toStartOf="@+id/textViewHomePage"
-        android:src="@drawable/bark" />
+        android:textSize="30sp"
+        android:typeface="serif" />
 
     <TextView
         android:id="@+id/textViewBarkBoard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="225dp"
-        android:layout_marginLeft="225dp"
-        android:layout_marginTop="89dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/textViewPlaydates"
+        android:layout_marginEnd="23dp"
         android:text="The Bark Board"
-        android:textSize="18sp" />
-
-    <ImageButton
-        android:id="@+id/imageButtonFetch"
-        android:layout_width="170dp"
-        android:layout_height="171dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginBottom="12dp"
-        android:src="@drawable/fetch" />
+        android:textSize="20sp"
+        android:typeface="serif" />
 
     <TextView
         android:id="@+id/textViewFetch"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/imageButtonFetch"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="74dp"
-        android:layout_marginLeft="74dp"
-        android:layout_marginBottom="2dp"
+        android:layout_below="@+id/imageButtonPlaydates"
+        android:layout_marginStart="73dp"
         android:text="Fetch!"
-        android:textSize="18sp" />
-
-    <ImageButton
-        android:id="@+id/imageButtonPlaydates"
-        android:layout_width="175dp"
-        android:layout_height="175dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="112dp"
-        android:src="@drawable/playdates" />
+        android:textSize="20sp"
+        android:typeface="serif" />
 
     <TextView
         android:id="@+id/textViewPlaydates"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textViewBarkBoard"
+        android:layout_above="@+id/imageButtonPlaydates"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="29dp"
-        android:layout_marginLeft="29dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginBottom="-103dp"
+        android:layout_marginStart="27dp"
         android:text="Puppy Playdates"
-        android:textSize="18sp" />
-
-    <ImageButton
-        android:id="@+id/imageButtonMap"
-        android:layout_width="177dp"
-        android:layout_height="171dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="12dp"
-        android:src="@drawable/map" />
+        android:textSize="20sp"
+        android:typeface="serif" />
 
     <TextView
         android:id="@+id/textViewMap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textViewFetch"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginEnd="78dp"
-        android:layout_marginRight="78dp"
-        android:layout_marginBottom="0dp"
+        android:layout_alignTop="@+id/textViewFetch"
+        android:layout_marginEnd="76dp"
         android:text="Map"
-        android:textSize="18sp" />
+        android:textSize="20sp"
+        android:typeface="serif" />
+
+    <ImageButton
+        android:id="@+id/imageButtonPlaydates"
+        android:layout_width="193dp"
+        android:layout_height="180dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="117dp"
+        android:src="@drawable/playdates" />
+
+    <ImageButton
+        android:id="@+id/imageButtonFetch"
+        android:layout_width="190dp"
+        android:layout_height="191dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/fetch" />
+
+    <ImageButton
+        android:id="@+id/imageButtonMap"
+        android:layout_width="183dp"
+        android:layout_height="190dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/map" />
+
+    <ImageButton
+        android:id="@+id/imageButtonBarkBoard"
+        android:layout_width="183dp"
+        android:layout_height="178dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/textViewBarkBoard"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/bark" />
+
 </RelativeLayout>

@@ -13,8 +13,9 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="65dp"
-        android:text="Register"
-        android:textSize="24sp" />
+        android:text="Registration Page"
+        android:textSize="30sp"
+        android:typeface="serif" />
 
     <EditText
         android:id="@+id/editTextRegisterEmail"
@@ -36,7 +37,8 @@
         android:layout_marginBottom="229dp"
         android:ems="10"
         android:hint="Enter Password"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:typeface="sans" />
 
     <Button
         android:id="@+id/buttonRegisterUser"

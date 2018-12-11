@@ -1,9 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Map">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="303dp"
+        android:layout_height="410dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="28dp"
+        android:src="@drawable/map"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="29dp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="145dp"
+        android:layout_marginTop="66dp"
+        android:text="Map"
+        android:textSize="30sp"
+        android:typeface="serif"
+        tools:layout_editor_absoluteX="160dp"
+        tools:layout_editor_absoluteY="38dp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="297dp"
+        android:layout_height="64dp"
+        android:layout_alignBottom="@+id/imageView4"
+        android:layout_alignStart="@+id/imageView4"
+        android:text="Can't find your puppy playdate? Check the map!"
+        android:textSize="22sp"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="396dp" />
+</RelativeLayout>

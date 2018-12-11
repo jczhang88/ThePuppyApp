@@ -12,9 +12,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="115dp"
+        android:layout_marginTop="58dp"
         android:text="Create Your Playdate"
-        android:textSize="24sp" />
+        android:textSize="30sp"
+        android:typeface="serif" />
 
     <EditText
         android:id="@+id/editTextCreateEventName"
@@ -22,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="177dp"
+        android:layout_marginTop="149dp"
         android:ems="10"
         android:hint="Enter Event Name"
         android:inputType="textPersonName" />
@@ -64,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="69dp"
+        android:layout_marginBottom="94dp"
         android:text="Create Your Playdate!" />
 
     <EditText
