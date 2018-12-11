@@ -7,15 +7,17 @@ public class Dog {
     private int age;
     private String temperament;
     private String ownerName;
+    private String userID;
 
     Dog(){}
 
-    public Dog(String name, String breed, int age, String temperament, String ownerName) {
+    public Dog(String name, String breed, int age, String temperament, String ownerName, String userID) {
         this.name = name;
         this.breed = breed;
         this.age = age;
         this.temperament = temperament;
         this.ownerName = ownerName;
+        this.userID = userID;
     }
 
     public String getName() {
@@ -40,6 +42,14 @@ public class Dog {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
     }
 
     public void setBreed(String breed) {

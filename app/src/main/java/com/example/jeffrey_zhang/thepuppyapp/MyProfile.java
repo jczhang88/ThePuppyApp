@@ -46,9 +46,6 @@ public class MyProfile extends Activity implements View.OnClickListener {
     private ImageView imageViewMyProfilePuppy2;
     private ImageView imageViewMyProfilePuppy3;
     private StorageReference mStorageRef2;
-    private StorageReference puppyStorage1;
-    private StorageReference puppyStorage2;
-    private StorageReference puppyStorage3;
     
 
     @Override
@@ -64,9 +61,6 @@ public class MyProfile extends Activity implements View.OnClickListener {
         buttonEditProfile = findViewById(R.id.buttonEditProfile);
         imageViewProfilePicture = findViewById(R.id.imageViewProfilePicture);
         mStorageRef2 = FirebaseStorage.getInstance().getReference();
-        puppyStorage1 = FirebaseStorage.getInstance().getReference();
-        puppyStorage2 = FirebaseStorage.getInstance().getReference();
-        puppyStorage3 = FirebaseStorage.getInstance().getReference();
 
         try{
             downloadAndSetImage();
@@ -113,6 +107,12 @@ public class MyProfile extends Activity implements View.OnClickListener {
 
             }
         });
+
+        try {
+            downloadandSetPuppyImages();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
         buttonEditProfile.setOnClickListener(this);
@@ -187,13 +187,15 @@ public class MyProfile extends Activity implements View.OnClickListener {
         });
     }
 
-    private void downloadandSetPuppyImages(){
+    private void downloadandSetPuppyImages() throws IOException {
         mAuth = FirebaseAuth.getInstance();
         final FirebaseUser user = mAuth.getCurrentUser();
 
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference myRef = database.getReference("users");
+        final File localFile = File.createTempFile("images", "jpg");
+
         Query current_user = myRef.orderByChild("emailAddress").equalTo(user.getEmail());
 
         current_user.addChildEventListener(new ChildEventListener() {
@@ -201,10 +203,35 @@ public class MyProfile extends Activity implements View.OnClickListener {
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 if(dataSnapshot.exists()){
                     User curr_user = dataSnapshot.getValue(User.class);
+                    String dog_num = String.valueOf(curr_user.getNum_dogs());
 
 
                     if(curr_user.getNum_dogs() > 0){
+                        StorageReference dogRef = mStorageRef2.child("images/puppyProfilePics/"
+                                + user.getUid() + "/0");
+
+                        dogRef.getFile(localFile)
+                                .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                                    @Override
+                                    public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                                        // Successfully downloaded data to local file
+                                        // ..
+                                        try {
+                                            Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), Uri.fromFile(localFile));
+                                            imageViewMyProfilePuppy1.setImageBitmap(bitmap);
+                                        } catch (IOException e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception exception) {
+                                // Handle failed download
+                                // ...
+                            }
+                        });
                     }
+
                 }
             }
 

@@ -108,12 +108,12 @@ public class AddPuppy extends Activity implements View.OnClickListener {
                     User dogOwner = dataSnapshot.getValue(User.class);
 
                     final FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    final DatabaseReference dogRef = database.getReference("users/"
-                            + dogOwner.getUserID() + "/dogs");
+                    final DatabaseReference dogRef = database.getReference("dogs/"
+                            + dogOwner.getUserID() + "/" + newName);
 
                     Dog newDog = new Dog(newName, newBreed, age, newTemperament,
-                            dogOwner.getDisplayName());
-                    dogRef.child(newDog.getName()).setValue(newDog);
+                            dogOwner.getDisplayName(), dogOwner.getUserID());
+                    dogRef.setValue(newDog);
 
                     finish();
                     startActivity(new Intent(AddPuppy.this, MyProfile.class));
@@ -178,7 +178,7 @@ public class AddPuppy extends Activity implements View.OnClickListener {
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference myRef = database.getReference("users");
 
-        Query dog_owner = myRef.orderByChild("emailAddress").equalTo(user.getEmail());
+        final Query dog_owner = myRef.orderByChild("emailAddress").equalTo(user.getEmail());
 
         dog_owner.addChildEventListener(new ChildEventListener() {
             @Override
@@ -190,6 +190,9 @@ public class AddPuppy extends Activity implements View.OnClickListener {
                             + user.getUid() + "/" + dogOwner.getNum_dogs() + "/");
 
                     dogOwner.setNum_dogs(dogOwner.getNum_dogs() + 1);
+                    final DatabaseReference userRef = database.getReference("users/" + user.getUid());
+
+                    userRef.setValue(dogOwner);
 
                     propicRef.putFile(selectedImageUri)
                             .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
