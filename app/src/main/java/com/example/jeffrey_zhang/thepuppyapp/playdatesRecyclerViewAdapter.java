@@ -1,11 +1,14 @@
 package com.example.jeffrey_zhang.thepuppyapp;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,6 +19,7 @@ public class playdatesRecyclerViewAdapter extends RecyclerView.Adapter<playdates
 
     private ArrayList<Event> playdates;
     private Context mContext;
+    private Button buttonCalendar;
 
     playdatesRecyclerViewAdapter(ArrayList<Event> playdates, Context mContext) {
         this.playdates = playdates;
@@ -44,6 +48,17 @@ public class playdatesRecyclerViewAdapter extends RecyclerView.Adapter<playdates
                 Toast.makeText(mContext, playdates.get(i).eventName, Toast.LENGTH_SHORT).show();
             }
         });
+
+        viewHold.buttonCalendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (view == buttonCalendar) {
+                    Intent calendar = new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("google.com"));
+                    mContext.startActivity(calendar);
+                }
+            }
+        });
     }
 
     @Override
@@ -53,6 +68,7 @@ public class playdatesRecyclerViewAdapter extends RecyclerView.Adapter<playdates
 
     public class ViewHolder_playdates extends RecyclerView.ViewHolder {
 
+        Button buttonCalendar;
         TextView textViewPlaydatesName, textViewPlaydatesLocation, textViewPlaydatesDate,
                 textViewPlaydatesDescription;
         RelativeLayout playdates_layout;
@@ -65,6 +81,7 @@ public class playdatesRecyclerViewAdapter extends RecyclerView.Adapter<playdates
             textViewPlaydatesDate = itemView.findViewById(R.id.textViewPlaydatesDate);
             textViewPlaydatesDescription = itemView.findViewById(R.id.textViewPlaydatesDescription);
             playdates_layout = itemView.findViewById(R.id.playdates_layout);
+            buttonCalendar = itemView.findViewById(R.id.buttonCalendar);
         }
     }
 }

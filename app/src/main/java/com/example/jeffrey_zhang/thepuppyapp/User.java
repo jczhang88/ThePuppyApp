@@ -6,7 +6,7 @@ public class User {
 
     private String displayName;
     private String emailAddress;
-    private String userID;
+    public String userID;
     private int num_dogs;
 
     User(){}

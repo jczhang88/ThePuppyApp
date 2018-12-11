@@ -112,7 +112,7 @@ public class PuppyPlaydates extends Activity implements View.OnClickListener {
                 // whenever data at this location is updated.
                 for (DataSnapshot userChild : userSnapshot.getChildren()) {
                     User user = userChild.getValue(User.class);
-                    setUserID(user.getUserID());
+                    setUserID(user.userID);
 
                     DatabaseReference eventsRef = database.getReference("events").child(currentID);
                     eventsRef.addListenerForSingleValueEvent(new ValueEventListener() {
