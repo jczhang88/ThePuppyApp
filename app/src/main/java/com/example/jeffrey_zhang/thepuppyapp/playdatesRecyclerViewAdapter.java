@@ -8,10 +8,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -19,7 +17,6 @@ public class playdatesRecyclerViewAdapter extends RecyclerView.Adapter<playdates
 
     private ArrayList<Event> playdates;
     private Context mContext;
-    private Button buttonCalendar;
 
     playdatesRecyclerViewAdapter(ArrayList<Event> playdates, Context mContext) {
         this.playdates = playdates;
@@ -42,21 +39,15 @@ public class playdatesRecyclerViewAdapter extends RecyclerView.Adapter<playdates
         viewHold.textViewPlaydatesDate.setText("Date: " + playdates.get(i).eventDate);
         viewHold.textViewPlaydatesDescription.setText(playdates.get(i).eventDescription);
 
-        viewHold.playdates_layout.setOnClickListener(new View.OnClickListener() {
+        viewHold.textViewCalendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(mContext, playdates.get(i).eventName, Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        viewHold.buttonCalendar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (view == buttonCalendar) {
-                    Intent calendar = new Intent(Intent.ACTION_VIEW,
-                            Uri.parse("google.com"));
-                    mContext.startActivity(calendar);
-                }
+                Intent calendar = new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("https://calendar.google.com/calendar/ical/" +
+                                        "umich.edu_gi4a5hjbloqcosc4e38gb5ddq4%40group." +
+                                        "calendar.google.com/" +
+                                        "private-ed66417c30fa89173c3d4ade92280ef6/basic.ics"));
+                mContext.startActivity(calendar);
             }
         });
     }
@@ -68,9 +59,8 @@ public class playdatesRecyclerViewAdapter extends RecyclerView.Adapter<playdates
 
     public class ViewHolder_playdates extends RecyclerView.ViewHolder {
 
-        Button buttonCalendar;
         TextView textViewPlaydatesName, textViewPlaydatesLocation, textViewPlaydatesDate,
-                textViewPlaydatesDescription;
+                textViewPlaydatesDescription, textViewCalendar;
         RelativeLayout playdates_layout;
 
         public ViewHolder_playdates(@NonNull View itemView) {
@@ -81,7 +71,7 @@ public class playdatesRecyclerViewAdapter extends RecyclerView.Adapter<playdates
             textViewPlaydatesDate = itemView.findViewById(R.id.textViewPlaydatesDate);
             textViewPlaydatesDescription = itemView.findViewById(R.id.textViewPlaydatesDescription);
             playdates_layout = itemView.findViewById(R.id.playdates_layout);
-            buttonCalendar = itemView.findViewById(R.id.buttonCalendar);
+            textViewCalendar = itemView.findViewById(R.id.textViewCalendar);
         }
     }
 }
