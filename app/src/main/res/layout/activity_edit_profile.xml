@@ -10,17 +10,17 @@
         android:id="@+id/buttonSelectImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/editTextDisplayName"
-        android:layout_marginBottom="137dp"
+        android:layout_alignStart="@+id/editTextEditBio"
+        android:layout_alignTop="@+id/buttonUploadImage"
         android:text="Select Image" />
 
     <Button
         android:id="@+id/buttonUploadImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/buttonSelectImage"
-        android:layout_toEndOf="@+id/editTextDisplayName"
+        android:layout_alignEnd="@+id/buttonEditName"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="146dp"
         android:text="Upload Image" />
 
     <ImageView
@@ -29,16 +29,15 @@
         android:layout_height="123dp"
         android:layout_above="@+id/editTextDisplayName"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="-179dp"
-        android:src="@drawable/woman" />
+        android:layout_marginBottom="-179dp" />
 
     <EditText
         android:id="@+id/editTextDisplayName"
         android:layout_width="187dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/editText"
-        android:layout_marginTop="201dp"
+        android:layout_alignStart="@+id/buttonSelectImage"
+        android:layout_marginTop="190dp"
         android:ems="10"
         android:hint="Enter name"
         android:inputType="textPersonName" />
@@ -48,44 +47,36 @@
         android:layout_width="123dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/editTextDisplayName"
-        android:layout_toEndOf="@+id/editTextDisplayName"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="13dp"
         android:text="Edit Name" />
 
     <Button
         android:id="@+id/buttonAddPuppy"
         android:layout_width="137dp"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/buttonUploadImage"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/buttonSelectImage"
-        android:layout_marginBottom="73dp"
+        android:layout_marginBottom="79dp"
         android:text="Add a Puppy" />
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="162dp"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/editText3"
-        android:layout_centerVertical="true"
-        android:ems="10"
-        android:hint="Enter occupation"
-        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/editText2"
         android:layout_width="175dp"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/editText"
-        android:layout_toEndOf="@+id/editText"
+        android:layout_above="@+id/editTextEditBio"
+        android:layout_alignStart="@+id/buttonSelectImage"
         android:ems="10"
         android:hint="Enter location"
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/editTextEditBio"
         android:layout_width="352dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/editText2"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="204dp"
         android:ems="10"
         android:hint="Tell us a little about you and your pups!"
         android:inputType="textPersonName" />
@@ -105,8 +96,9 @@
         android:id="@+id/button"
         android:layout_width="192dp"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/editText2"
+        android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/buttonAddPuppy"
+        android:layout_marginStart="11dp"
         android:text="Update Profile" />
 
 </RelativeLayout>
